@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha384-hv8kH2VVVNATQD3UqqFvDmYD77lO9b/SVf0bUIwYmZ5R1SSZIkHf/jT84sJTZd+V" crossorigin="anonymous">
+        <title>FarmEasy</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <!-- Call back function 2 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+
+</head>
+<body>
+    <main>
+        <div id="google_translate_element"></div>
+        <div id="page3">
+        <video autoplay loop muted src="/videos/video6.mp4"></video>
+        <nav id="menu">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">NGOs & Government Schemes</a></li>
+                <li><a href="#">Soil Quality</a></li>
+                <li><a href="#">Crop Tracking System</a></li>
+                <li><a href="#">AI Chatbot & Helpline</a></li>
+            </ul>
+</nav>
+<div id="page3-content"><section>
+    <div class="containeragri">
+            <h2 id="agri">Agriculture Schemes</h2>
+            <input type="text" id="searchInput" placeholder="Search by scheme name...">
+            <ul class="scheme-list" id="schemeList">
+                <!-- Scheme items will be dynamically added here using JavaScript -->
+            </ul>
+        </div>
+</section>
+<section class="ngos">
+    <div id="containerngo">
+        <h2 id="ngosid">NGOs for Assistance</h2>
+        <input type="text" id="ngoSearchInput" placeholder="Search NGOs...">
+        <ul class="ngo-list" id="ngoList">
+            <!-- NGO items will be dynamically added here using JavaScript -->
+        </ul>
+    </div>
+</section></div>
+
+</div>
+
+</main>
+
+
+
+
+
+
+<script>
+   const allSchemes = [
+    { name: 'Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)', link: 'https://pmkisan.gov.in/' },
+    { name: 'Pradhan Mantri Fasal Bima Yojana (PMFBY)', link: 'https://pmfby.gov.in/' },
+    { name: 'National Mission for Sustainable Agriculture (NMSA)', link: 'https://nmsa.dac.gov.in/' },
+    { name: 'Paramparagat Krishi Vikas Yojana (PKVY)', link: 'https://www.pmkvyofficial.org/' },
+    { name: 'Soil Health Card Scheme', link: 'https://soilhealth.dac.gov.in/' },
+    { name: 'Rashtriya Krishi Vikas Yojana (RKVY)', link: 'https://rkvy.nic.in/' },
+    { name: 'National Livestock Mission (NLM)', link: 'https://nlm.udyamimitra.in/' },
+    { name: 'National Beekeeping and Honey Mission (NBHM)', link: 'https://nbb.gov.in/default.html' },
+    { name: 'Animal Husbandry Infrastructure Development Fund (AHIDF)', link: 'https://ahidf.udyamimitra.in/' },
+    { name: 'Kisan Credit Card (KCC)', link: 'https://upagripardarshi.gov.in/staticpages/KisanCreditCard.aspx' },
+    
+
+
+
+
+
+
+    // Add more schemes as needed
+];
+
+
+
+
+const allNgos = [
+            { name: 'Aahwahan', link: 'https://www.aahwahan.com/' },
+            { name: 'End Poverty', link: 'https://www.endpoverty.org.in/' },
+            { name: 'Swades Foundation', link: 'https://swadesfoundation.org/' },
+            { name: 'Universal Versatile Society', link: 'https://uvsociety.org/home' },
+            { name: 'Dilasa', link: 'https://dilasa.org/' },
+            { name: 'Watershed Organization Trust ', link: 'https://wotr.org/' },
+            { name: 'Vrutti', link: 'https://vruttiimpactcatalysts.org/vrutti/' },
+            { name: 'BAIF Development Research Foundation', link: 'https://www.baif.org.in/' },
+            { name: 'Nav Bharat Jagriti Kendra (NBJK)', link: 'https://www.nbjk.org/' },
+            // Add more NGOs as needed
+        ];
+
+
+const schemeList = document.getElementById('schemeList');
+const searchInput = document.getElementById('searchInput');
+
+
+const ngoList = document.getElementById('ngoList');
+const ngoSearchInput = document.getElementById('ngoSearchInput');
+
+
+function renderSchemes(schemes) {
+    schemeList.innerHTML = '';
+
+
+    schemes.forEach(scheme => {
+        const listItem = document.createElement('li');
+        listItem.className = 'scheme-item';
+        listItem.innerHTML = `<a href="${scheme.link}" target="_blank">${scheme.name}</a>`;
+        schemeList.appendChild(listItem);
+    });
+}
+
+
+function renderNgos(ngos) {
+            ngoList.innerHTML = '';
+            ngos.forEach(ngo => {
+                const listItem = document.createElement('li');
+                listItem.className = 'ngo-item';
+                listItem.innerHTML = `<a href="${ngo.link}" target="_blank">${ngo.name}</a>`;
+                ngoList.appendChild(listItem);
+            });
+        }
+
+
+function filterSchemes(searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
+    return allSchemes.filter(scheme => scheme.name.toLowerCase().includes(searchTerm));
+}
+
+
+function filterNgos(searchTerm) {
+            searchTerm = searchTerm.toLowerCase();
+            return allNgos.filter(ngo => ngo.name.toLowerCase().includes(searchTerm));
+        }
+
+
+       
+
+
+function updateSchemeList() {
+    const searchTerm = searchInput.value;
+    const filteredSchemes = filterSchemes(searchTerm);
+    renderSchemes(filteredSchemes);
+}
+
+
+function updateNgoList() {
+            const searchTerm = ngoSearchInput.value;
+            const filteredNgos = filterNgos(searchTerm);
+            renderNgos(filteredNgos);
+        }
+
+
+        // Initial render
+        renderSchemes(allSchemes);
+        renderNgos(allNgos);
+     
+
+
+
+
+// Add event listener for input changes
+searchInput.addEventListener('input', updateSchemeList);
+ngoSearchInput.addEventListener('input', updateNgoList);
+
+
+
+
+</script>
+</body>

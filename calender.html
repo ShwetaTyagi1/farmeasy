@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+   
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+
+
+
+
+</head>
+<body>
+    <div id="google_translate_element"></div>
+    <main>
+        
+        
+            
+<section>
+    <div id="calendar">
+       
+        <div class="content">
+            <!-- Calendar content goes here -->
+        </div>
+    </div>
+    
+</section>
+</main>
+
+
+
+
+<script>
+   
+    $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                events: [
+                    // Your calendar events data here
+                    {
+                        title: 'Event 1',
+                        start: '2024-02-03'
+                    },
+                    {
+                        title: 'Event 2',
+                        start: '2024-02-10'
+                    },
+                    // Add more events as needed
+                ],
+                viewRender: function (view, element) {
+                    // Check if the current view is in 'month' mode
+                    if (view.name === 'month') {
+                        // Set the background color for the first row
+                        $('.fc-day-header').css('background-color', 'lightblue');
+                    } else {
+                        // Set a default background color for other views
+                        $('.fc-day-header').css('background-color', 'initial');
+                    }
+                },
+               
+            });
+        });
+</script>
+
+
+
+
+</body>
+
+
+
+
+</html>

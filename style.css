@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:monospace;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #dadada;
+    position: relative;
+    ;
+}
+
+#cursor{
+    height: 7.5vw;
+    width: 7.5vw;
+    background-color: #ff5f38;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cursor h5 {
+    font-size: 1.15vw;
+    font-weight: 500;
+}
+
+#page1 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+#page1-content
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+nav{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw 3vw;
+}
+
+nav h3{
+    font-size: 1.4vw;
+    font-weight: 300;
+    color: black;
+}
+
+
+nav h4{
+    font-size: 1.4vw;
+    font-weight: 300;
+    color: black;
+}
+
+#page1-content h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 19.5vw;
+    font-weight: 2000;
+   
+   
+}
+
+#page1-content h1 span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    display:inline-block
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(251, 251, 251);
+    position: relative;
+    padding: 6vw;
+}
+
+#page2-elements{
+    height:75vh;
+    width: 100%;
+  
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3vw;
+
+}
+
+#page2-elements .box{
+height:100% ;
+width: 22%;
+position: relative;
+}
+
+#page2-elements .box video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#page2-elements .box img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all linear 0.7s;
+}
+
+#page2-elements .box:hover img{
+    opacity: 0;
+
+}
+
+#page2-top{
+    text-align: center;
+
+}
+
+#page2-top h2{
+    
+    
+    font-size: 4vw;
+    font-weight: 500;
+    font-family: monospace;
+
+}
+
+#page2-elements .box .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+#page2-elements .box h4 {
+    font-size: 2vw; /* Adjust the font size as needed */
+    font-weight: 500;
+    color: rgb(255, 255, 255); /* Set the text color */
+    margin: 0; /* Remove default margin */
+}
+
+#loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 10px;
+    
+}
+
+#loader h3{
+    font-size: 2vw;
+    font-weight: 2vw;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff5f38; /* Orange background color */
+    z-index: 1000;
+    overflow: hidden;
+    display: none; /* Initially hidden */
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px; /* Adjust the height as needed */
+}
+
+#menu ul li {
+    display: inline-block;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#page1-content nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw 3vw;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    position: relative;
+    transition: color 0.3s; /* Add transition effect */
+}
+
+#menu ul li a:hover,
+#menu ul li a.active {
+    color: orange; /* Change color on hover or when active */
+}
+
+#menu ul li a.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px; /* Adjust the distance of the underline */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: orange;
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#page3 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+#page3-content {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    color: #0b0b0b;
+    display: flex;
+    align-items:self-start;
+    flex-direction: column;
+    justify-content:center;
+}
+
+
+
+
+
+
+.search-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Translucent white background */
+    width: 33.33%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for better styling */
+   
+}
+
+
+.scheme-container {
+    width: 66.67%;
+    
+}
+
+
+.scheme-list {
+    list-style: none;
+    padding: 0;
+   
+}
+
+
+.scheme-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+#searchInput{
+     margin-bottom: 10px
+   
+}
+
+
+#agri{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size:40px;
+   background-color: gold;
+}
+
+
+#containerngo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 80px;
+    margin-right: 120px;
+    width: 31%; /* Adjust the width as needed */
+    padding: 20px;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+
+#ngosid{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size:40px;
+   background-color: gold;
+}
+
+
+.ngo-list {
+    list-style: none;
+    padding: 0;
+   
+}
+
+
+.ngo-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+
+
+.ngo-ngos {
+    width: 66.67%;
+   
+}
+
+
+#ngoSearchInput{
+    margin-bottom: 10px
+   
+}
+
+.containeragri {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+    width: 33%; /* Adjust the width as needed */
+    padding: 20px;
+    z-index: 10; /* Ensure it's above the video and other content */
+}
+
+
+
+#calendar {
+    margin: 3% 5%;
+    margin-right: 5%;
+    margin-bottom: 20%;
+    width: 90%;
+    height: 90%;
+    background: linear-gradient(135deg, #ff6e67, #ffc154);    font-weight: 900;
+    font-size: 24px;
+    padding: 20px; /* Adjusted padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: solid 5px black;
+}
+
+
+
+
+
+.month {
+    font-size: 20px;
+}
+
+#calendar::before {
+    content: '\1F4C5'; /* Unicode for a calendar icon */
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+#calendar:hover {
+    background-color: rgba(219, 160, 65, 0.9);
+    transform: scale(1.05);
+}
+
+#box{
+    height: 3px;
+    width: 3px;
+}
+
+.scheme-item {
+    transition: transform 0.3s ease;
+}
+
+.scheme-item:hover {
+    transform: scale(1.1); /* You can adjust the scale factor as needed */
+}
+
+.ngo-item {
+    transition: transform 0.3s ease;
+}
+
+.ngo-item:hover {
+    transform: scale(1.1); /* You can adjust the scale factor as needed */
+}
+
